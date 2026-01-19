@@ -8,4 +8,14 @@ def home(request):
     })
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'about.html', {
+        'title': 'About us',
+        'description': 'Learn more about our company.',
+    })
+
+def contact(request):
+    return render(request, 'contact.html', {
+        'title': 'Contact Us',
+        'description': 'Contact us at: 123 456 789',
+        "numbers": [1, 2, 3, 4, 5],
+    })
