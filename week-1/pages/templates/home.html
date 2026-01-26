@@ -11,6 +11,10 @@
         {% for item in items %}
             <li>{{ item }}</li>
         {% endfor %}
+
+        <p>Hello {{ username }}</p>
     </ul>
+
+    <a href="{% url 'contact' %}">Contact page</a>
 </body>
 </html>
