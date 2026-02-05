@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to My Site, {{ username }}</h1>
+<p>This is the home page. We have lots of interesting content here.</p>
+
+
+<h1>Users</h1>
+{% comment %} <a href="{% url 'user_profile' id=1 %}">View Alice's Profile</a>
+<a href="{% url 'user_profile' id=2 %}">View Bob's Profile</a> {% endcomment %}
+<ul>
+{% for user in users%}
+
+<li>
+<a href="{% url 'user_profile' id=user.id %}">{{ user.name }} </a>
+</li>
+
+{% endfor %}
+</ul>
+{% endblock %}
