@@ -1,0 +1,22 @@
+<!-- pages/templates/book_list.html -->
+<!doctype html>
+<html>
+  <head>
+    <title>All Books</title>
+  </head>
+  <body>
+    <h1>All Books</h1>
+
+    <ul>
+      {% for book in books %}
+      <li>
+        <!-- book link = Primary Key-->
+        <a href="/books/{{ book.id }}">{{ book.title }}</a>
+        ({{ book.year_published }})
+      </li>
+      {% empty %}
+      <li>No books found.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
